@@ -29,22 +29,14 @@ String getTime() {
 
 void setup() {
   
-  //
   lcd.init();
   lcd.backlight();
   
-  if (!rtc.begin()){
-    lcd.clear();
-    lcd.setCursor(0,0);
-    lcd.print("clokc not found!");
-    delay(1500);
-  }
-  rtc.setTime(COMPILE_TIME);  
   Serial.begin(9600);
   while (!Serial){
     ;
   }
-  if (!SD.begin(4)) {
+  if(!SD.begin(10)) {
     lcd.clear();
     lcd.setCursor(0,0);
     lcd.print("sd not found!");
@@ -67,14 +59,10 @@ void loop() {
   else {
     lcd.print("error");
   }
-  lcd.setCursor(0,1);
-  String time = rtc.getTimeString();
-  lcd.print(time);
   lcd.setCursor(15,0);
   File sd = SD.open("data.txt", FILE_WRITE);
   if (sd && data >= 0) {
-    //String log_data = getTime();
-    String log_data = time;
+    String log_data = getTime();
     log_data += " --> ";
     log_data += data;
     log_data += " mm";
