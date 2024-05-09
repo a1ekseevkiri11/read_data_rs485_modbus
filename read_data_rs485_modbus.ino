@@ -5,8 +5,6 @@
 #include <LiquidCrystal_I2C.h>
 #include <microDS3231.h>
 
-
-MicroDS3231 rtc(0x68);
 LiquidCrystal_I2C lcd(0x27,20,4);
 
 ModbusClient modbus(Serial, 3);
