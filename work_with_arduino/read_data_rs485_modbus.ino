@@ -4,10 +4,13 @@
 #include <SD.h>
 #include <LiquidCrystal_I2C.h>
 #include <microDS3231.h>
+#include <SoftwareSerial.h>
 
-LiquidCrystal_I2C lcd(0x27,20,4);
+LiquidCrystal_I2C lcd(0x27,16,2);
 
-ModbusClient modbus(Serial, 3);
+SoftwareSerial rs485(9,8);
+ModbusClient modbus(rs485, 7);
+
 
 String getTime() {
   String time_str;
@@ -48,7 +51,8 @@ void setup() {
 }
 
 void loop() {
-  int32_t data = modbus.holdingRegisterRead(11, 4);  // Читаем из модуля с адресом 9, значение регистра "Holding Register" с адресом 0.
+  //holdingRegisterRead(slave, address)
+  int32_t data = modbus.holdingRegisterRead(11, 4); 
   lcd.clear();
   lcd.setCursor(0,0);
   if (data >= 0) {
@@ -63,7 +67,6 @@ void loop() {
     String log_data = getTime();
     log_data += " --> ";
     log_data += data;
-    log_data += " mm";
     sd.println(log_data);
     sd.close();
     lcd.write(232);
