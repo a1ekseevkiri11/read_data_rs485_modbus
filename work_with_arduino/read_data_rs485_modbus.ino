@@ -37,6 +37,10 @@ void setup() {
   while (!Serial){
     ;
   }
+  rs485.begin(9600); 
+  while(!rs485){
+    ;
+  }
   if(!SD.begin(10)) {
     lcd.clear();
     lcd.setCursor(0,0);
@@ -61,6 +65,8 @@ void loop() {
   else {
     lcd.print("error");
   }
+  lcd.setCursor(2,1);
+  lcd.print(getTime());
   lcd.setCursor(15,0);
   File sd = SD.open("data.txt", FILE_WRITE);
   if (sd && data >= 0) {
