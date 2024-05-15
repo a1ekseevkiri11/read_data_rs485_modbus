@@ -1,5 +1,5 @@
 # ПО для работы с терминалом
-
+[Terminal](https://github.com/a1ekseevkiri11/read_data_rs485_modbus/blob/main/Terminal-v.1.9b.7z)
 
 # ПО для ардуино
 Arduino IDE
