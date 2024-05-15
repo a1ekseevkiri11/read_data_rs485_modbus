@@ -3,7 +3,6 @@
 #include <SPI.h>
 #include <SD.h>
 #include <LiquidCrystal_I2C.h>
-#include <microDS3231.h>
 #include <SoftwareSerial.h>
 
 LiquidCrystal_I2C lcd(0x27,16,2);
