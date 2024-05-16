@@ -2,6 +2,8 @@
 
 перейдя по ссылке скачать [Terminal](https://github.com/a1ekseevkiri11/read_data_rs485_modbus/blob/main/Terminal-v.1.9b.7z)
 
+сайт [расчета CRC](https://www.lammertbies.nl/comm/info/crc-calculation)
+
 ## Инструкция по работе с Terminal
 
 1) в окне "COM Port" выберите порт к которому подключен CH340
