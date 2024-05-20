@@ -68,7 +68,10 @@
 # ПО для python
 перейдя по ссылке скачать с официального сайта язык [python](https://www.python.org/)
 
-установите библиотеку PyModbus ```pip install pymodbus``` с помощью утилиты Pip
+установите библиотеки:
+1) PyModbus ```pip install pymodbus```
+2) PySerial ```pip install pyserial```
+с помощью утилиты Pip
 
 ## Инструкция по установке библиотек с помощью утилиты Pip
 
