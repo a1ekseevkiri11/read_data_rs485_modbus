@@ -10,7 +10,7 @@ array_slave = []
 
 for slave in range(0, 247):
     print(slave)
-    response = client.read_holding_registers(address=0x0110, count=1, slave=slave)
+    response = client.read_holding_registers(address=16, count=1, slave=slave)
     if not response.isError():
         print("Найден: ",slave)
         array_slave.append(slave)

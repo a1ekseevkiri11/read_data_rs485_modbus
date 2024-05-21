@@ -22,7 +22,7 @@ def getModbusClient():
         method='rtu', 
         port=port, 
         baudrate=9600, 
-        timeout=0.03,
+        timeout=0.05,
         )
 
     if not client.connect():

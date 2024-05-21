@@ -6,7 +6,7 @@ client = getModbusClient()
 
 while True:
     # для других датчиков изменять address, count, slave
-    response = client.read_holding_registers(address=4, count=1, slave=11)
+    response = client.read_holding_registers(address=4, count=1, slave=1)
     if not response.isError():
         data = str(response.registers[0])
     else:
